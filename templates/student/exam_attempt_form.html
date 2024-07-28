@@ -1,0 +1,13 @@
+<html>
+    <body>
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Attempt Exam: {{ exam.name }}</h1>
+  <p>You are about to attempt this exam. Once you submit the form, you will not be able to attempt it again.</p>
+  <form method="post" action="{% url 'attempt-exam' exam.id %}">
+    {% csrf_token %}
+    <button type="submit">Attempt Exam</button>
+  </body>
+  </html>
+ 
